@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'ember-performance-before-app',
+    modulePrefix: 'ember-performance-workshop',
     environment,
     rootURL: '/',
     locationType: 'auto',

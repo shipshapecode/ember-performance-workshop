@@ -1,8 +1,8 @@
 {
-  "name": "ember-performance-before-app",
+  "name": "ember-performance-workshop",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for ember-performance-before-app goes here",
+  "description": "Small description for ember-performance-workshop goes here",
   "license": "MIT",
   "author": "",
   "directories": {
@@ -17,8 +17,14 @@
     "test": "ember test"
   },
   "devDependencies": {
+    "@html-next/flexi-config": "^2.1.0",
+    "@html-next/flexi-default-styles": "^2.1.0",
+    "@html-next/flexi-dsl": "^2.0.3",
+    "@html-next/flexi-layouts": "^2.0.3",
+    "bootstrap": "^3.3.7",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
+    "ember-bootstrap": "^1.2.0",
     "ember-cli": "~3.0.0",
     "ember-cli-app-version": "^3.0.0",
     "ember-cli-babel": "^6.6.0",
@@ -31,14 +37,18 @@
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^2.0.0",
+    "ember-cp-validations": "^3.5.1",
     "ember-data": "~3.0.0",
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.0.0",
+    "ember-math-helpers": "^2.4.0",
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-resolver": "^4.0.0",
     "ember-source": "~3.0.0",
-    "ember-welcome-page": "^3.0.0",
+    "ember-string-helpers": "^1.0.2",
+    "ember-truth-helpers": "^2.0.0",
     "eslint-plugin-ember": "^5.0.0",
+    "flexi": "^2.0.2",
     "loader.js": "^4.2.3"
   },
   "engines": {
