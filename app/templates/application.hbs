@@ -1,1 +1,30 @@
-{{outlet}}
+<screen>
+  {{#bs-navbar as |navbar|}}
+    <div class="navbar-header">
+      {{navbar.toggle}}
+      {{#link-to "index" class="navbar-brand"}}Ember Performance Workshop{{/link-to}}
+    </div>
+    {{#navbar.content}}
+      {{#navbar.nav as |nav|}}
+        {{#nav.item}}{{#nav.link-to "index"}}Home{{/nav.link-to}}{{/nav.item}}
+        {{#nav.item}}{{#nav.link-to "setup"}}Setup{{/nav.link-to}}{{/nav.item}}
+        {{#nav.item}}{{#nav.link-to "initial-load"}}Initial Load{{/nav.link-to}}{{/nav.item}}
+        {{#nav.item}}{{#nav.link-to "reload"}}Reload{{/nav.link-to}}{{/nav.item}}
+        {{#nav.item}}{{#nav.link-to "render"}}Render{{/nav.link-to}}{{/nav.item}}
+      {{!--#nav.dropdown as |dd|}}
+        {{#dd.toggle}}Dropdown <span class="caret"></span>{{/dd.toggle}}
+        {{#dd.menu as |ddm|}}
+          {{#ddm.item}}{{#ddm.link-to "index"}}Home{{/ddm.link-to}}{{/ddm.item}}
+          {{#ddm.item}}{{#ddm.link-to "demo.navbars"}}Navbars{{/ddm.link-to}}{{/ddm.item}}
+        {{/dd.menu}}
+      {{/nav.dropdown--}}
+      {{/navbar.nav}}
+    {{/navbar.content}}
+  {{/bs-navbar}}
+
+  <hbox justify="center">
+    <box xs="11" lg="8">
+      {{outlet}}
+    </box>
+  </hbox>
+</screen>

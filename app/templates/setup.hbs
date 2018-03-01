@@ -1,0 +1,21 @@
+<h1>Setup</h1>
+
+<p>
+  We will be starting with Ember 3.0 to automatically get the ~10 kb savings the removal of deprecations gives us.
+  I have setup an example app and added some bloated and non-performant things to it.
+  I highly recommend following along with the official repo and just making these changes in your other apps later,
+  but if you would like to try to work in a different app, feel free to, but we may not be able to offer as much support if things go wrong.
+</p>
+
+<h2>Lighthouse</h2>
+
+<p>
+  We will be using lighthouse to get baselines of our performance and other criteria.
+  There is a version built into Chrome, but Chrome extensions can interfere with that one,
+  and the CLI version is much more accurate. It should be installed before the workshop.
+</p>
+
+{{#code-block language='bash'}}
+  npm install -g lighthouse
+  lighthouse https://localhost:4200/
+{{~/code-block~}}
