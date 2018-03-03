@@ -26,9 +26,20 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('initial-load');
-  this.route('reload');
-  this.route('render');
+  this.route('initial-load', function() {
+    this.route('brotli');
+    this.route('ember-cli-concat');
+    this.route('fastboot');
+    this.route('removing-jquery');
+    this.route('broccoli-concat-analyser');
+    this.route('tree-shaking');
+  });
+  this.route('reload', function() {
+    this.route('service-workers');
+  });
+  this.route('render', function() {
+    this.route('vertical-collection');
+  });
   this.route('setup');
 });
 
