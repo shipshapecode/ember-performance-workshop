@@ -1,4 +1,4 @@
-<h2>Concatenating JS to reduce requests</h2>
+<h2>Inlining critical assets</h2>
 
 <p>
   ember-cli-inline-content allows you to inline the contents of any file into your HTML.
@@ -8,22 +8,10 @@
 </p>
 
 {{#code-block language='bash'}}
-  ember install ember-cli-concat
+  ember install ember-cli-inline-content
 {{~/code-block~}}
 
 <p>
   Once installed, we want to enable concatenation for just our JS, and also mark it to be
-  asynchronously loaded. This will keep our page from being held up from loading.
+  asynchronously loaded. This will keep our page from being held up from loading
 </p>
-
-{{#code-block language='javascript'}}
-  emberCliConcat: {
-    js: {
-      concat: process.env.EMBER_ENV === 'production',
-      useAsync: process.env.EMBER_ENV === 'production'
-    },
-    css: {
-      concat: false
-    }
-  },
-{{~/code-block~}}

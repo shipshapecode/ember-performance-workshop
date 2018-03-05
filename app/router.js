@@ -33,12 +33,14 @@ Router.map(function() {
     this.route('removing-jquery');
     this.route('broccoli-concat-analyser');
     this.route('tree-shaking');
+    this.route('ember-cli-inline-content');
   });
   this.route('reload', function() {
     this.route('service-workers');
   });
   this.route('render', function() {
     this.route('vertical-collection');
+    this.route('ember-perf-timeline');
   });
   this.route('setup');
 });

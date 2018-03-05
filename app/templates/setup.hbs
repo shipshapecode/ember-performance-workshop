@@ -7,6 +7,19 @@
   but if you would like to try to work in a different app, feel free to, but we may not be able to offer as much support if things go wrong.
 </p>
 
+<h2>Repo</h2>
+
+<p>
+  If you have not already cloned the repo and installed the dependencies, please do so now.
+</p>
+
+{{#code-block language='bash'}}
+  git clone https://github.com/shipshapecode/ember-performance-workshop.git
+  cd ember-performance-workshop
+  yarn
+  ember s
+{{~/code-block~}}
+
 <h2>Lighthouse</h2>
 
 <p>
@@ -17,5 +30,5 @@
 
 {{#code-block language='bash'}}
   npm install -g lighthouse
-  lighthouse https://localhost:4200/
+  lighthouse http://localhost:4200/ --view
 {{~/code-block~}}

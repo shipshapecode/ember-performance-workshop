@@ -8,16 +8,69 @@
       {{#navbar.nav as |nav|}}
         {{#nav.item}}{{#nav.link-to "index"}}Home{{/nav.link-to}}{{/nav.item}}
         {{#nav.item}}{{#nav.link-to "setup"}}Setup{{/nav.link-to}}{{/nav.item}}
-        {{#nav.item}}{{#nav.link-to "initial-load"}}Initial Load{{/nav.link-to}}{{/nav.item}}
-        {{#nav.item}}{{#nav.link-to "reload"}}Reload{{/nav.link-to}}{{/nav.item}}
-        {{#nav.item}}{{#nav.link-to "render"}}Render{{/nav.link-to}}{{/nav.item}}
-      {{!--#nav.dropdown as |dd|}}
-        {{#dd.toggle}}Dropdown <span class="caret"></span>{{/dd.toggle}}
-        {{#dd.menu as |ddm|}}
-          {{#ddm.item}}{{#ddm.link-to "index"}}Home{{/ddm.link-to}}{{/ddm.item}}
-          {{#ddm.item}}{{#ddm.link-to "demo.navbars"}}Navbars{{/ddm.link-to}}{{/ddm.item}}
-        {{/dd.menu}}
-      {{/nav.dropdown--}}
+
+        {{#nav.dropdown tagName="li" as |dd|}}
+          {{#dd.toggle}}Initial Load <span class="caret"></span>{{/dd.toggle}}
+          {{#dd.menu as |ddm|}}
+            {{#ddm.item}}
+              {{#ddm.link-to "initial-load.ember-cli-inline-content"}}
+                ember-cli-inline-content
+              {{/ddm.link-to}}
+            {{/ddm.item}}
+            {{#ddm.item}}
+              {{#ddm.link-to "initial-load.ember-cli-concat"}}
+                ember-cli-concat
+              {{/ddm.link-to}}
+            {{/ddm.item}}
+            {{#ddm.item}}
+              {{#ddm.link-to "initial-load.removing-jquery"}}
+                Removing jQuery
+              {{/ddm.link-to}}
+            {{/ddm.item}}
+            {{#ddm.item}}
+              {{#ddm.link-to "initial-load.tree-shaking"}}
+                Tree Shaking
+              {{/ddm.link-to}}
+            {{/ddm.item}}
+            {{#ddm.item}}
+              {{#ddm.link-to "initial-load.brotli"}}
+                Brotli Compression
+              {{/ddm.link-to}}
+            {{/ddm.item}}
+            {{#ddm.item}}
+              {{#ddm.link-to "initial-load.fastboot"}}
+                Fastboot
+              {{/ddm.link-to}}
+            {{/ddm.item}}
+          {{/dd.menu}}
+        {{/nav.dropdown}}
+
+        {{#nav.dropdown tagName="li" as |dd|}}
+          {{#dd.toggle}}Reload <span class="caret"></span>{{/dd.toggle}}
+          {{#dd.menu as |ddm|}}
+            {{#ddm.item}}
+              {{#ddm.link-to "reload.service-workers"}}
+                Service Workers
+              {{/ddm.link-to}}
+            {{/ddm.item}}
+          {{/dd.menu}}
+        {{/nav.dropdown}}
+
+        {{#nav.dropdown tagName="li" as |dd|}}
+          {{#dd.toggle}}Render <span class="caret"></span>{{/dd.toggle}}
+          {{#dd.menu as |ddm|}}
+            {{#ddm.item}}
+              {{#ddm.link-to "render.ember-perf-timeline"}}
+                ember-perf-timeline
+              {{/ddm.link-to}}
+            {{/ddm.item}}
+            {{#ddm.item}}
+              {{#ddm.link-to "render.vertical-collection"}}
+                Vertical Collection
+              {{/ddm.link-to}}
+            {{/ddm.item}}
+          {{/dd.menu}}
+        {{/nav.dropdown}}
       {{/navbar.nav}}
     {{/navbar.content}}
   {{/bs-navbar}}
