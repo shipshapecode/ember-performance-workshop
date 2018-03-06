@@ -7,6 +7,8 @@
   installed in the repo, but disabled. If it is not installed, it can be installed by running:
 </p>
 
+<h2>Exercise</h2>
+
 {{#code-block}}
   ember install ember-cli-concat
 {{~/code-block~}}
@@ -27,3 +29,9 @@
     }
   },
 {{~/code-block~}}
+
+<p>We also need to replace our JS links in index.html with the new concatenated output.</p>
+
+{{#code-block language='handlebars'}}
+  \{{content-for 'concat-js'}}
+{{/code-block}}

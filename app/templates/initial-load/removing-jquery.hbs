@@ -16,6 +16,16 @@
   as well as patch up some issues with fastboot and fetch.
 </p>
 
+<h2>Baseline</h2>
+
+<p>Before we begin, let's use lighthouse to get the current metrics for our app.</p>
+
+{{#code-block}}
+  lighthouse http://localhost:4200/initial-load/removing-jquery --view
+{{/code-block}}
+
+<h2>Exercise</h2>
+
 {{#code-block}}
   ember install ember-fetch
 {{/code-block}}

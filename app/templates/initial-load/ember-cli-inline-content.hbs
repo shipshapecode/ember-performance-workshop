@@ -7,6 +7,8 @@
   installed in the repo, but disabled. If it is not installed, it can be installed by running:
 </p>
 
+<h2>Exercise: Inline CSS</h2>
+
 {{#code-block language='bash'}}
   ember install ember-cli-inline-content
 {{~/code-block~}}
@@ -16,3 +18,33 @@
   without extra requests for CSS.
 </p>
 
+{{not-inline-header}}
+
+<p>
+  This is a super basic header example that just has text, with a font-size and text-align property set.
+  This extremely small CSS payload will not do much to negatively effect the build time, but we will use it
+  as an example of how you would inline your styles for this header.
+</p>
+
+<p>
+  First, I generally create an <code>inline</code> directory, to put all potential inline content into.
+  For the purpose of this example, let's create <code>inline/header.css</code>.
+  Then we should copy the styles into it.
+</p>
+
+{{#code-block language="css"}}
+  .not-inline-header h1 {
+    font-size: 35px;
+    text-align: center;
+  }
+{{/code-block}}
+
+<p>
+  TODO: add details for using the inline CSS
+</p>
+
+<h2>Exercise: Inline Google Analytics</h2>
+
+<p>
+  TODO: add details for using the inline GA
+</p>

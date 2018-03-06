@@ -1,1 +1,32 @@
 <h2>Fastboot</h2>
+
+<h2>Baseline</h2>
+
+<p>Before we begin, let's use Lighthouse to get the current metrics for our app.</p>
+
+{{#code-block language='bash'}}
+  lighthouse http://localhost:4200/initial-load/fastboot --view
+{{/code-block}}
+
+<h2>Exercise</h2>
+
+{{#code-block}}
+  ember install ember-cli-fastboot
+{{/code-block}}
+
+<h2>After</h2>
+
+<p>
+  Let's check our Lighthouse score again, now that we have fastboot up and running.
+</p>
+
+{{#code-block language='bash'}}
+  lighthouse http://localhost:4200/initial-load/fastboot --view
+{{/code-block}}
+
+<p>
+  With fastboot installed and running, we should be able to completely disable JavaScript and still have our page content load.
+  It will also allow us to set meta and title values with ember-cli-head for snippets to unfurl on social media. The biggest win,
+  however, is that our page is rendered server side and loaded immediately. Having any sort of content loading here is a large
+  improvement both to Google and Lighthouse, and your actual users.
+</p>
