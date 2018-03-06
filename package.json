@@ -22,7 +22,7 @@
     "@html-next/flexi-dsl": "^2.1.0",
     "@html-next/flexi-layouts": "^2.1.0",
     "@html-next/vertical-collection": "^1.0.0-beta.10",
-    "bootstrap": "^3.3.7",
+    "bootstrap-sass": "^3.3.7",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
     "ember-bootstrap": "^1.2.1",

@@ -85,12 +85,20 @@
     <box xs="11" lg="8">
       {{outlet}}
       <hbox>
-        <hbox justify="start" align="center">
-          <span class="glyphicon glyphicon-circle-arrow-left"></span> &nbsp; Back
-        </hbox>
-        <hbox justify="end" align="center">
-          Next &nbsp; <span class="glyphicon glyphicon-circle-arrow-right"></span>
-        </hbox>
+        {{#if previous}}
+          <hbox justify="start" align="center">
+            {{#link-to previous.route}}
+              <span class="glyphicon glyphicon-circle-arrow-left"></span> &nbsp; {{previous.text}}
+            {{/link-to}}
+          </hbox>
+        {{/if}}
+        {{#if next}}
+          <hbox justify="end" align="center">
+            {{#link-to next.route}}
+              {{next.text}} &nbsp; <span class="glyphicon glyphicon-circle-arrow-right"></span>
+            {{/link-to}}
+          </hbox>
+        {{/if}}
       </hbox>
     </box>
   </hbox>

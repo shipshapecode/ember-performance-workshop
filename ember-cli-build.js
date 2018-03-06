@@ -11,7 +11,7 @@ module.exports = function(defaults) {
     'ember-bootstrap': {
       'bootstrapVersion': 3,
       'importBootstrapFont': true,
-      'importBootstrapCSS': true
+      'importBootstrapCSS': false
     },
     'ember-prism': {
       'components': ['scss', 'javascript', 'handlebars', 'http', 'json', 'bash'],
