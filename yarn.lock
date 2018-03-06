@@ -2857,9 +2857,9 @@ ember-cli-test-loader@^2.2.0:
   dependencies:
     ember-cli-babel "^6.8.1"
 
-ember-cli-tree-shaker@rwwagner90/ember-cli-tree-shaker:
+ember-cli-tree-shaker@rwwagner90/ember-cli-tree-shaker#patch-1:
   version "0.1.4"
-  resolved "https://codeload.github.com/rwwagner90/ember-cli-tree-shaker/tar.gz/f96dea45ec93425d8e0c09e61fa7f3378f8bc2bc"
+  resolved "https://codeload.github.com/rwwagner90/ember-cli-tree-shaker/tar.gz/98eb60996c5b930353bb6f4c9fff0e5cd44eb4ef"
   dependencies:
     broccoli-concat "^3.2.2"
     broccoli-debug "^0.6.4"
