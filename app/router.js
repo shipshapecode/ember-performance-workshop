@@ -43,6 +43,9 @@ Router.map(function() {
     this.route('ember-perf-timeline');
   });
   this.route('setup');
+  this.route('extras', function() {
+    this.route('ember-macro-benchmark');
+  });
 });
 
 export default Router;
