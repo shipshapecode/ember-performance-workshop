@@ -5,24 +5,51 @@
 </p>
 
 <p>
-  {{#code-inline}}ember-native-dom-event-dispatcher{{/code-inline}} is no longer needed on latest Ember,
-  and {{#code-inline}}ember-maybe-import-regenerator{{/code-inline}} is already added to your package.json on latest Ember.
-  {{#code-inline}}ember-native-dom-helpers{{/code-inline}} is also largely unnecessary for tests, thanks to the recent
+  <code>ember-native-dom-event-dispatcher</code> is no longer needed on latest Ember,
+  and <code>ember-maybe-import-regenerator</code> is already added to your package.json on latest Ember.
+  <code>ember-native-dom-helpers</code> is also largely unnecessary for tests, thanks to the recent
   refactor of the default Ember test helpers.
 </p>
 
 <p>
-  The only things we really need to do are remove `ember-ajax`, and use `ember-fetch` instead,
+  The only things we really need to do are remove <code>ember-ajax</code>, and use <code>ember-fetch</code> instead,
   as well as patch up some issues with fastboot and fetch.
 </p>
 
+{{#code-block}}
+  ember install ember-fetch
+{{/code-block}}
+
 <p>
-  Then we can just set `vendorFiles: { 'jquery.js': null }` in our config to make sure we exclude jQuery from the bundle.
+  We then will want to remove <code>ember-ajax</code> from our <code>package.json</code> and run <code>yarn</code>
+  to make sure we clean up the unused package.
 </p>
 
 <p>
-  To find old usages of jQuery easily, so you know where all the things you should remove are, you can enabled the `no-jquery` rule
-  of `eslint-plugin-ember`. Since it is now included in Ember apps by default, we just need to add it to our `rules` in `.eslintrc.js`.
+  Create a file at <code>fastboot/initializers/ajax.js</code> that includes the following:
+</p>
+
+{{#code-block language='javascript'}}
+  // fastboot/initializers/ajax.js
+
+  export default {
+    name: 'ajax-service',
+    initialize() {
+      // noop
+      // This is to override Fastboot's initializer which prevents ember-fetch from working
+      // https://github.com/ember-fastboot/ember-cli-fastboot/blob/master/fastboot/initializers/ajax.js
+    }
+  }
+{{/code-block}}
+
+<p>
+  Then we can just set <code>vendorFiles: { 'jquery.js': null }</code> in our config to make sure we exclude jQuery from the bundle.
+</p>
+
+<p>
+  To find old usages of jQuery easily, so you know where all the things you should remove are, you can enabled
+  the <code>no-jquery</code> rule of <code>eslint-plugin-ember</code>. Since it is now included in Ember apps by default,
+  we just need to add it to our <code>rules</code> in <code>.eslintrc.js</code>.
 </p>
 
 {{#code-block language='javascript'}}
