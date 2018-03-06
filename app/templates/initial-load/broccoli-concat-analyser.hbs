@@ -1,1 +1,23 @@
-{{outlet}}
+<h2>broccoli-concat-analyser</h2>
+
+<p>
+  broccoli-concat-analyser allows us to visualize our app and vendor code sizes and determine where the most bloat is,
+  so we can evaluate which things we want to keep and where we can cut things out.
+</p>
+
+{{#code-block}}
+  npm install -g broccoli-concat-analyser
+  CONCAT_STATS=true ember s
+  broccoli-concat-analyser ./concat-stats-for
+{{/code-block}}
+
+<p>
+  We can go through an example here, which I encountered in real life, where ember-cp-validations
+  was more bloat than ember-changeset + ember-changeset-validations, so I switched to them.
+</p>
+
+<p>
+  Looking through your vendor code, identifying and removing bloat helps the entire community,
+  not just your app. If we all work together, we can ensure all the addons are as small and
+  performant as possible.
+</p>

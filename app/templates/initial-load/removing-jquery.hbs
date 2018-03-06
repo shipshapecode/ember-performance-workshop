@@ -1,1 +1,32 @@
-{{outlet}}
+<h2>Removing jQuery</h2>
+
+<p>
+  Ember is actively working to make jQuery optional, but for now we need to complete a few extra manual steps to remove it.
+</p>
+
+<p>
+  {{#code-inline}}ember-native-dom-event-dispatcher{{/code-inline}} is no longer needed on latest Ember,
+  and {{#code-inline}}ember-maybe-import-regenerator{{/code-inline}} is already added to your package.json on latest Ember.
+  {{#code-inline}}ember-native-dom-helpers{{/code-inline}} is also largely unnecessary for tests, thanks to the recent
+  refactor of the default Ember test helpers.
+</p>
+
+<p>
+  The only things we really need to do are remove `ember-ajax`, and use `ember-fetch` instead,
+  as well as patch up some issues with fastboot and fetch.
+</p>
+
+<p>
+  Then we can just set `vendorFiles: { 'jquery.js': null }` in our config to make sure we exclude jQuery from the bundle.
+</p>
+
+<p>
+  To find old usages of jQuery easily, so you know where all the things you should remove are, you can enabled the `no-jquery` rule
+  of `eslint-plugin-ember`. Since it is now included in Ember apps by default, we just need to add it to our `rules` in `.eslintrc.js`.
+</p>
+
+{{#code-block language='javascript'}}
+  rules: {
+    'ember/no-jquery': 'error'
+  }
+{{/code-block}}

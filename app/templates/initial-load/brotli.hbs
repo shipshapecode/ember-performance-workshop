@@ -1,1 +1,22 @@
-{{outlet}}
+<h2>Brotli Compression</h2>
+
+<p>
+  Brotli is an alternative to gzip compression, but it is not supported in all browsers.
+  If you do not need IE support, you can safely use it in all major browsers.
+  We can use it via ember-cli-brotli and there are several ember-cli-deploy plugins for it as well.
+</p>
+
+{{#code-block language='bash'}}
+  ember install ember-cli-brotli
+{{~/code-block~}}
+
+<p>
+  By default, this is only enabled in production builds, which is probably what we want because it needs https to run,
+  and that is extra work to set up for local development.
+</p>
+
+<p>
+  Different servers and CDNs handle brotli in different ways, and most CDNs force
+  {{#code-inline}}Content-Encoding: gzip{{/code-inline}} so to make this work correctly, we have to force our
+  servers and CDNs to use {{#code-inline}}Content-Encoding: br{{/code-inline}}.
+</p>

@@ -1,1 +1,20 @@
-{{outlet}}
+<h2>Tree Shaking</h2>
+
+<p>
+  ember-cli-tree-shaker enables tree shaking for your Ember app, but is very beta right now.
+  That being said, it can still help us squeeze a few extra kb out of our build.
+</p>
+
+{{#code-block}}
+  ember install ember-cli-tree-shaker
+{{/code-block}}
+
+{{#code-block language='javascript'}}
+  treeShaking: {
+    enabled: true,
+    include: [
+      'ember-validators/format.js',
+      'ember-validators/presence.js'
+    ]
+  }
+{{/code-block}}
