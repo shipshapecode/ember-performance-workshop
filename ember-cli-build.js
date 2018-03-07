@@ -21,23 +21,12 @@ module.exports = function(defaults) {
       enabled: false
     },
     inlineContent: {
+      'google-analytics': {
+        file: 'inline/ga.js',
+        enabled: process.env.EMBER_ENV === 'production'
+      },
       header: 'inline/header.css'
     },
-    metricsAdapters: [
-      {
-        name: 'GoogleAnalytics',
-        environments: ['development', 'production'],
-        config: {
-          id: 'UA-XXXX-Y',
-          // Use `analytics_debug.js` in development
-          debug: false,
-          // Use verbose tracing of GA events
-          trace: false,
-          // Ensure development env hits aren't sent to GA
-          sendHitTask: false
-        }
-      }
-    ],
     treeShaking: {
       enabled: false,
       include: [
