@@ -1,5 +1,11 @@
 <h2>Fastboot</h2>
 
+<p>
+  Fastboot has been around for some time, but it may have seemed unnecessary to some people to implement it.
+  It is definitely useful for if JS is disabled or if you just want something to display while the browser
+  side app is still pulling in assets. This can improve initial load times in lighthouse.
+</p>
+
 <h2>Baseline</h2>
 
 <p>Before we begin, let's use Lighthouse to get the current metrics for our app.</p>
@@ -13,6 +19,12 @@
 {{#code-block}}
   ember install ember-cli-fastboot
 {{/code-block}}
+
+<p>
+  You will also need to make sure your app, and all the addons you consume, are fastboot compatible.
+  This mostly involves making sure that you do not use <code>window</code> or <code>document</code> without
+  first checking if you are in fastboot, since node does not have access to these things.
+</p>
 
 <h2>After</h2>
 

@@ -77,6 +77,17 @@
             {{/ddm.item}}
           {{/dd.menu}}
         {{/nav.dropdown}}
+
+        {{#nav.dropdown tagName="li" as |dd|}}
+          {{#dd.toggle}}Extras <span class="caret"></span>{{/dd.toggle}}
+          {{#dd.menu as |ddm|}}
+            {{#ddm.item}}
+              {{#ddm.link-to "extras.ember-macro-benchmark"}}
+                ember-macro-benchmark
+              {{/ddm.link-to}}
+            {{/ddm.item}}
+          {{/dd.menu}}
+        {{/nav.dropdown}}
       {{/navbar.nav}}
     {{/navbar.content}}
   {{/bs-navbar}}

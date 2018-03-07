@@ -1,1 +1,24 @@
 <h2>Service Workers</h2>
+
+<p>
+  <code><a href="http://ember-service-worker.com/">ember-service-worker</a></code> makes working with service workers in
+  Ember a breeze. There are several plugins available to take care of caching your app and making it offline first,
+  but it is also easily extensible if you need to run custom code in your service worker.
+</p>
+
+<p>
+  For the basic use case, we will just need to install
+  <code><a href="https://github.com/DockYard/ember-service-worker-index">ember-service-worker-index</a></code> to cache
+  the Ember app's index and
+  <code><a href="https://github.com/DockYard/ember-service-worker-asset-cache">ember-service-worker-asset-cache</a></code>
+  to cache all of our asset files. Caching these things will allow us to have an offline first app, which appears the same
+  as our normal app does. It will also prefer to load from the cache, so reloads of our page will be blazing fast.
+</p>
+
+<h2>Exercise</h2>
+
+{{#code-block}}
+  ember install ember-service-worker
+  ember install ember-service-worker-index
+  ember install ember-service-worker-asset-cache
+{{/code-block}}
