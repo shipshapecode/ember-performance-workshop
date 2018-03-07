@@ -24,7 +24,6 @@
     "@html-next/vertical-collection": "html-next/vertical-collection#ecd5173382cd5953ce9f74b8161b4d20672e1b11",
     "bootstrap-sass": "^3.3.7",
     "broccoli-asset-rev": "^2.4.5",
-    "ember-ajax": "^3.0.0",
     "ember-bootstrap": "^1.2.1",
     "ember-changeset": "^1.5.0-beta.0",
     "ember-changeset-validations": "^1.2.11",
