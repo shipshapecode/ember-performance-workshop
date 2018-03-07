@@ -54,10 +54,6 @@
 {{/code-block}}
 
 <p>
-  Then we can just set <code>vendorFiles: { 'jquery.js': null }</code> in our config to make sure we exclude jQuery from the bundle.
-</p>
-
-<p>
   To find old usages of jQuery easily, so you know where all the things you should remove are, you can enabled
   the <code>no-jquery</code> rule of <code>eslint-plugin-ember</code>. Since it is now included in Ember apps by default,
   we just need to add it to our <code>rules</code> in <code>.eslintrc.js</code>.
@@ -68,3 +64,37 @@
     'ember/no-jquery': 'error'
   }
 {{/code-block}}
+
+<p>
+  After we are confident we have removed all jQuery usage, we can exclude it from our vendor bundle in ember-cli-build.js.
+</p>
+
+{{#code-block language="javascript"}}
+  //ember-cli-build.js
+  vendorFiles: { 'jquery.js': null }
+{{/code-block}}
+
+<p>
+  This app does not really use ember-data, but it does include it as a dependency. Since most people do use it, we should go ahead
+  and use the fetch mixin for our adapter just to illustrate how it is done.
+</p>
+{{#code-block language="javascript"}}
+  //app/adapters/application.js
+  import AdapterFetch from 'ember-fetch/mixins/adapter-fetch';
+  import JSONAPIAdapter from 'ember-data/adapters/json-api';
+
+  export default JSONAPIAdapter.extend(AdapterFetch, {
+    ajaxOptions() {
+      const options = this._super(...arguments) || {};
+      options.headers = options.headers || {};
+      options.headers['Content-Type'] = 'application/vnd.api+json';
+      return options;
+    }
+  });
+{{/code-block}}
+
+<p>
+  We did not have any <code>this.$</code> or jQuery usages in our tests because we started with the new test syntax, but for older
+  apps that do use it, you can use <a href="https://github.com/simonihmig/ember-test-helpers-codemod">https://github.com/simonihmig/ember-test-helpers-codemod</a>
+  to convert your tests to the new helpers.
+</p>

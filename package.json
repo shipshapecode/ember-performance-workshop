@@ -44,7 +44,7 @@
     "ember-cli-sass": "^7.1.7",
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
-    "ember-cli-tree-shaker": "rwwagner90/ember-cli-tree-shaker#patch-1",
+    "ember-cli-tree-shaker": "rwwagner90/ember-cli-tree-shaker#98eb60996c5b930353bb6f4c9fff0e5cd44eb4ef",
     "ember-cli-uglify": "^2.0.2",
     "ember-component-css": "^0.6.3",
     "ember-cp-validations": "^3.5.1",
