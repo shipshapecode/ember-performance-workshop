@@ -7,6 +7,19 @@
   and there are several ember-cli-deploy plugins for it as well.
 </p>
 
+<h2>Baseline</h2>
+
+<p>
+  We should run a production build, to get our current bundle size, and run another one after enabling
+  brotli compression, to see what sort of savings we get.
+</p>
+
+{{#code-block}}
+  ember build -e production
+{{/code-block}}
+
+<h2>Exercise</h2>
+
 {{#code-block language='bash'}}
   ember install ember-cli-brotli
 {{~/code-block~}}

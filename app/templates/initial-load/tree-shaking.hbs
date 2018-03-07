@@ -5,11 +5,26 @@
   That being said, it can still help us squeeze a few extra kb out of our build.
 </p>
 
+<h2>Baseline</h2>
+
+<p>
+  We should run a production build, to get our current bundle size, and run another one after enabling
+  tree shaking, to see what sort of savings we get.
+</p>
+
 {{#code-block}}
-  ember install ember-cli-tree-shaker
+  ember build -e production
+{{/code-block}}
+
+<h2>Exercise</h2>
+
+{{#code-block}}
+  ember install rwwagner90/ember-cli-tree-shaker#patch-1
 {{/code-block}}
 
 {{#code-block language='javascript'}}
+  // ember-cli-build.js
+
   treeShaking: {
     enabled: true,
     include: [
