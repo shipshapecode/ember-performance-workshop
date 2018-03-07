@@ -13,6 +13,15 @@ module.exports = function(defaults) {
       'importBootstrapFont': true,
       'importBootstrapCSS': false
     },
+    emberCliConcat: {
+      js: {
+        concat: process.env.EMBER_ENV === 'production',
+        useAsync: process.env.EMBER_ENV === 'production'
+      },
+      css: {
+        concat: false
+      }
+    },
     'ember-prism': {
       'components': ['scss', 'javascript', 'handlebars', 'http', 'json', 'bash'],
       'plugins': ['normalize-whitespace', 'show-language']
