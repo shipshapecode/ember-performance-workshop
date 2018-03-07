@@ -20,6 +20,21 @@ module.exports = function(defaults) {
     'ember-service-worker': {
       enabled: false
     },
+    metricsAdapters: [
+      {
+        name: 'GoogleAnalytics',
+        environments: ['development', 'production'],
+        config: {
+          id: 'UA-XXXX-Y',
+          // Use `analytics_debug.js` in development
+          debug: false,
+          // Use verbose tracing of GA events
+          trace: false,
+          // Ensure development env hits aren't sent to GA
+          sendHitTask: false
+        }
+      }
+    ],
     treeShaking: {
       enabled: false,
       include: [

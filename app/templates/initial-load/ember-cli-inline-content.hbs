@@ -40,11 +40,79 @@
 {{/code-block}}
 
 <p>
-  TODO: add details for using the inline CSS
+  We can then include this file to be inlined in our ember-cli-build.js.
 </p>
+
+{{#code-block language="javascript"}}
+  // ember-cli-build.js
+  inlineContent: {
+    header: 'inline/header.css'
+  }
+{{/code-block}}
+
+Then all we need to do is reference it in index.html.
+
+{{#code-block language="handlebars"}}
+  \{{!-- app/index.html --}}
+  \{{content-for 'header'}}
+{{/code-block}}
 
 <h2>Exercise: Inline Google Analytics</h2>
 
 <p>
-  TODO: add details for using the inline GA
+  Another thing that typically fires off another request and that cannot have cache headers set on it, is the script
+  for Google Analytics. This app has a basic GA setup using ember-metrics, just to show how a typical simple setup would go.
+  We can use ember-cli-inline-content to inline galite instead, to both save on file size, allow setting cache headers,
+  and eliminate an extra call to get the GA script. We can use galite by copying it directly to <code>inline/ga.js</code>.
 </p>
+
+{{#code-block language="javascript"}}
+  (function(e,t,n,i,s,a,c){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)}
+  ;a=t.createElement(i);c=t.getElementsByTagName(i)[0];a.async=true;a.src=s
+  ;c.parentNode.insertBefore(a,c)
+  })(window,document,"galite","script","https://cdn.jsdelivr.net/npm/ga-lite@2/dist/ga-lite.min.js");
+
+  galite('create', 'UA-XXXX-Y', 'auto');
+  galite('send', 'pageview');
+{{/code-block}}
+
+<p>
+  Then we just need to add this to our <code>inlineContent</code> config in ember-cli-build.js and
+  pull in this inline content in our index.html, just like we did for the CSS above.
+  We can conditionally include it, to make sure events do not fire unless we are in production.
+</p>
+
+{{#code-block language="javascript"}}
+  // ember-cli-build.js
+  inlineContent: {
+    'google-analytics': {
+      file: 'inline/ga.js',
+      enabled: process.env.EMBER_ENV === 'production'
+    }
+  }
+{{/code-block}}
+
+{{#code-block language="handlebars"}}
+  \{{!-- app/index.html --}}
+  \{{content-for 'google-analytics'}}
+{{/code-block}}
+
+<p>
+  We will also want to remove ember-metrics from package.json and update the <code>_trackPage</code> method in router.js.
+</p>
+
+{{#code-block language="javascript"}}
+  _trackPage() {
+    if (!get(this, 'fastboot.isFastBoot')) {
+      run.scheduleOnce('afterRender', this, () => {
+        const page = document.location.pathname;
+        const title = getWithDefault(this, 'currentRouteName', 'unknown');
+
+        if (typeof galite === 'undefined') {
+          return;
+        }
+        return galite('send', 'pageview', { page, title });
+      });
+    }
+  }
+{{/code-block}}
