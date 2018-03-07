@@ -1,14 +1,11 @@
 import EmberRouter from '@ember/routing/router';
 import config from './config/environment';
-import { get } from '@ember/object';
-import { inject as service } from '@ember/service';
+import { getWithDefault } from '@ember/object';
 import { scheduleOnce } from '@ember/runloop';
 
 const Router = EmberRouter.extend({
   location: config.locationType,
   rootURL: config.rootURL,
-
-  metrics: service(),
 
   didTransition() {
     this._super(...arguments);
@@ -18,11 +15,15 @@ const Router = EmberRouter.extend({
   },
 
   _trackPage() {
+    // TODO: wrap this to ensure fastboot compatibility
     scheduleOnce('afterRender', this, () => {
-      const page = this.get('url');
-      const title = this.getWithDefault('currentRouteName', 'unknown');
+      const page = document.location.pathname;
+      const title = getWithDefault(this, 'currentRouteName', 'unknown');
 
-      get(this, 'metrics').trackPage({ page, title });
+      if (typeof galite === 'undefined') {
+        return;
+      }
+      return galite('send', 'pageview', { page, title });
     });
   }
 });
