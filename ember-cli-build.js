@@ -20,6 +20,9 @@ module.exports = function(defaults) {
     'ember-service-worker': {
       enabled: false
     },
+    inlineContent: {
+      header: 'inline/header.css'
+    },
     metricsAdapters: [
       {
         name: 'GoogleAnalytics',
