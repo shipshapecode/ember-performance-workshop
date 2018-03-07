@@ -47,6 +47,7 @@ Router.map(function() {
   this.route('setup');
   this.route('extras', function() {
     this.route('ember-macro-benchmark');
+    this.route('prember');
   });
 });
 
