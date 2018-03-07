@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 
@@ -27,7 +28,7 @@ export default Route.extend({
 
   deactivate() {
     this._super(...arguments);
-    
+
     $(window).off('scroll', this._scrollHandler);
   },
 
