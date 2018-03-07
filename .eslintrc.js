@@ -18,6 +18,7 @@ module.exports = {
     galite: false
   },
   rules: {
+    'ember/no-jquery': 'error',
     'no-console': 'off'
   },
   overrides: [
