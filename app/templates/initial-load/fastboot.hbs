@@ -23,8 +23,19 @@
 <p>
   You will also need to make sure your app, and all the addons you consume, are fastboot compatible.
   This mostly involves making sure that you do not use <code>window</code> or <code>document</code> without
-  first checking if you are in fastboot, since node does not have access to these things.
+  first checking if you are in fastboot, since node does not have access to these things. There are two ways to check
+  for compatibility before using things that could potentially break the boot.
 </p>
+
+{{#code-block language="javascript"}}
+  // Check if `window` exists before using it
+  const ua = window && window.navigator ? window.navigator.userAgent : '';
+
+  // Check if in fastboot via the service
+  if (!this.get('fastboot.isFastBoot')) {
+    // Do non-fastboot safe things here
+  }
+{{/code-block}}
 
 <h2>After</h2>
 
