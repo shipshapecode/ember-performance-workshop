@@ -1,10 +1,22 @@
 <h2>Concatenating JS to reduce requests</h2>
 
 <p>
-  ember-cli-inline-content allows you to inline the contents of any file into your HTML.
-  This allows us to inline critical, above the fold styles, and other small JS and CSS
-  snippets we may not want to fire off another request to our server for. It should be already
-  installed in the repo, but disabled. If it is not installed, it can be installed by running:
+  <code><a href="https://github.com/sir-dunxalot/ember-cli-concat">ember-cli-concat</a></code>
+  allows us to reduce the number of requests to our server to get JS files.
+  This is not as important with HTTP/2, since we can do tons of simultaneous file requests, but reducing requests,
+  within reason, can still be helpful for slower connections.
+</p>
+
+<p>
+  The downside to concatenating, is now the entire JS payload is cached as one file.
+  This makes it so that anytime we change any vendor or app JS, a new file needs to be loaded.
+  If we did not do this, vendor and app code would be cached separately, and then we may not need to
+  update those cached assets as often.
+</p>
+
+<p>
+  We can also enable <code>async</code> loading of the single JS file, so our page isn't held up from rendering.
+  Since the JS payload is generally one of the largest things that needs to be loaded, this will greatly improve loading times.
 </p>
 
 <h2>Exercise</h2>

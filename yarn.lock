@@ -2639,6 +2639,30 @@ ember-bootstrap@^1.2.1:
     rsvp "^4.0.1"
     silent-error "^1.0.1"
 
+ember-changeset-validations@^1.2.11:
+  version "1.2.11"
+  resolved "https://registry.yarnpkg.com/ember-changeset-validations/-/ember-changeset-validations-1.2.11.tgz#b769c3557f42fae05398869f3904200e21a005d7"
+  dependencies:
+    ember-changeset "1.4.2-beta.1"
+    ember-cli-babel "^6.0.0"
+    ember-cli-htmlbars "^1.1.1"
+    ember-get-config "^0.2.4"
+    ember-validators "^1.0.0"
+
+ember-changeset@1.4.2-beta.1:
+  version "1.4.2-beta.1"
+  resolved "https://registry.yarnpkg.com/ember-changeset/-/ember-changeset-1.4.2-beta.1.tgz#c6d750a3e6682f4a07f01d221eacd890b22e7250"
+  dependencies:
+    ember-cli-babel "^6.8.2"
+    ember-deep-set "^0.1.3"
+
+ember-changeset@^1.5.0-beta.0:
+  version "1.5.0-beta.0"
+  resolved "https://registry.yarnpkg.com/ember-changeset/-/ember-changeset-1.5.0-beta.0.tgz#7a77ee727927b51fb64a6aa1fccf287c13fd56b5"
+  dependencies:
+    ember-cli-babel "^6.8.2"
+    ember-deep-set "^0.1.3"
+
 ember-cli-app-version@^3.0.0:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/ember-cli-app-version/-/ember-cli-app-version-3.1.3.tgz#26d25f5e653ff0106f0b39da6d75518ba8ed282d"
@@ -2769,6 +2793,16 @@ ember-cli-htmlbars-inline-precompile@^1.0.0:
     hash-for-dep "^1.0.2"
     heimdalljs-logger "^0.1.7"
     silent-error "^1.1.0"
+
+ember-cli-htmlbars@^1.1.1:
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/ember-cli-htmlbars/-/ember-cli-htmlbars-1.3.4.tgz#461289724b34af372a6a0c4b6635819156963353"
+  dependencies:
+    broccoli-persistent-filter "^1.0.3"
+    ember-cli-version-checker "^1.0.2"
+    hash-for-dep "^1.0.2"
+    json-stable-stringify "^1.0.0"
+    strip-bom "^2.0.0"
 
 ember-cli-htmlbars@^2.0.1, ember-cli-htmlbars@^2.0.2, ember-cli-htmlbars@^2.0.3:
   version "2.0.3"
@@ -3115,6 +3149,12 @@ ember-decorators@^1.3.2:
     ember-compatibility-helpers "^0.1.0"
     ember-macro-helpers "^0.17.0"
 
+ember-deep-set@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/ember-deep-set/-/ember-deep-set-0.1.3.tgz#852dbcf189419d33e57af724ff2d6d8f404d7b73"
+  dependencies:
+    ember-cli-babel "^6.6.0"
+
 ember-export-application-global@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ember-export-application-global/-/ember-export-application-global-2.0.0.tgz#8d6d7619ac8a1a3f8c43003549eb21ebed685bd2"
@@ -3138,7 +3178,7 @@ ember-fetch@^3.4.4:
     node-fetch "^2.0.0-alpha.9"
     whatwg-fetch "^2.0.3"
 
-ember-get-config@^0.2.3:
+ember-get-config@^0.2.3, ember-get-config@^0.2.4:
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/ember-get-config/-/ember-get-config-0.2.4.tgz#118492a2a03d73e46004ed777928942021fe1ecd"
   dependencies:
@@ -3420,7 +3460,7 @@ ember-truth-helpers@^2.0.0:
   dependencies:
     ember-cli-babel "^6.8.2"
 
-ember-validators@^1.0.4:
+ember-validators@^1.0.0, ember-validators@^1.0.4:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ember-validators/-/ember-validators-1.1.1.tgz#34b06f7c4bde4e57c30cb9dfc6566647c1c140c1"
   dependencies:

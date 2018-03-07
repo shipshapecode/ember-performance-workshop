@@ -12,12 +12,34 @@
 {{/code-block}}
 
 <p>
+  Looking through your vendor code, identifying and removing bloat helps the entire community,
+  not just your app. If we all work together, we can ensure all the addons are as small and
+  performant as possible.
+</p>
+
+<h2>Exercise</h2>
+
+<p>
+  After running the steps from above, we should have a nice interactive chart of our dep sizes.
+  If we are looking for ways we can cut down on our bundle size, we should consider which addons are necessary, and
+  which we could use alternate addons for or just copy the parts we need over ourselves.
   We can go through an example here, which I encountered in real life, where ember-cp-validations
   was more bloat than ember-changeset + ember-changeset-validations, so I switched to them.
 </p>
 
+<h3>Input</h3>
+{{input placeholder="Cannot be blank" value=testObject.testField}}
+{{errors.firstObject.message}}
+
 <p>
-  Looking through your vendor code, identifying and removing bloat helps the entire community,
-  not just your app. If we all work together, we can ensure all the addons are as small and
-  performant as possible.
+  First we should install the new packages, which should already be installed for you, but just in case.
+</p>
+
+{{#code-block}}
+  ember install ember-changeset
+  ember install ember-changeset-validations
+{{/code-block}}
+
+<p>
+  Then we need to change how we are setting up the validations in the controller.
 </p>

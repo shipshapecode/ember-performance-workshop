@@ -13,6 +13,8 @@ const Router = EmberRouter.extend({
   didTransition() {
     this._super(...arguments);
     this._trackPage();
+    // TODO: wrap this to ensure fastboot compatibility
+    window.scrollTo(0, 0);
   },
 
   _trackPage() {
