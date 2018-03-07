@@ -17,5 +17,21 @@ export default Route.extend({
         text: 'broccoli-concat-analyser'
       }
     });
+  },
+
+  activate() {
+    this._super(...arguments);
+
+    $(window).on('scroll', this._scrollHandler);
+  },
+
+  deactivate() {
+    this._super(...arguments);
+    
+    $(window).off('scroll', this._scrollHandler);
+  },
+
+  _scrollHandler() {
+    console.log('scrolling!');
   }
 });
