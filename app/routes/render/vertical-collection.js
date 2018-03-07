@@ -12,7 +12,10 @@ export default Route.extend({
         route: 'render.ember-perf-timeline',
         text: 'ember-perf-timeline'
       },
-      next: null
+      next: {
+        route: 'extras.ember-macro-benchmark',
+        text: 'ember-macro-benchmark'
+      }
     });
   }
 });
