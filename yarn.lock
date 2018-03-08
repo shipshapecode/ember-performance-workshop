@@ -3090,7 +3090,7 @@ ember-cli-valid-component-name@^1.0.0:
   dependencies:
     silent-error "^1.0.0"
 
-ember-cli-version-checker@^1.0.2, ember-cli-version-checker@^1.2.0:
+ember-cli-version-checker@^1.0.2:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/ember-cli-version-checker/-/ember-cli-version-checker-1.3.1.tgz#0bc2d134c830142da64bf9627a0eded10b61ae72"
   dependencies:
@@ -3235,19 +3235,6 @@ ember-concurrency@^0.8.7:
     ember-cli-babel "^6.8.2"
     ember-maybe-import-regenerator "^0.1.5"
 
-ember-cp-validations@^3.5.1:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/ember-cp-validations/-/ember-cp-validations-3.5.1.tgz#55632a87b1db84f3d54bc769c1c07ff241e9f49f"
-  dependencies:
-    ember-cli-babel "^6.6.0"
-    ember-cli-version-checker "^2.0.0"
-    ember-getowner-polyfill "^2.0.1"
-    ember-require-module "^0.1.2"
-    ember-string-ishtmlsafe-polyfill "^2.0.0"
-    ember-validators "^1.0.4"
-    exists-sync "0.0.4"
-    walk-sync "^0.3.1"
-
 ember-data@~3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/ember-data/-/ember-data-3.0.2.tgz#bfedc6cfd3cdfcf89de7e18f272085a9b33ea930"
@@ -3328,7 +3315,7 @@ ember-get-config@^0.2.3, ember-get-config@^0.2.4:
     broccoli-file-creator "^1.1.1"
     ember-cli-babel "^6.3.0"
 
-ember-getowner-polyfill@^2.0.1, ember-getowner-polyfill@^2.2.0:
+ember-getowner-polyfill@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/ember-getowner-polyfill/-/ember-getowner-polyfill-2.2.0.tgz#38e7dccbcac69d5ec694000329ec0b2be651d2b2"
   dependencies:
@@ -3472,12 +3459,6 @@ ember-raf-scheduler@0.1.0, ember-raf-scheduler@^0.1.0:
   dependencies:
     ember-cli-babel "^6.6.0"
 
-ember-require-module@^0.1.2:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/ember-require-module/-/ember-require-module-0.1.3.tgz#f82f60552142179152d28ec97ebd75d967cae1dc"
-  dependencies:
-    ember-cli-babel "^6.9.2"
-
 ember-require-module@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/ember-require-module/-/ember-require-module-0.2.0.tgz#eafe436737ead4762220a9166b78364abf754274"
@@ -3576,12 +3557,6 @@ ember-string-helpers@^1.0.2:
   dependencies:
     ember-cli-babel "^5.0.0"
 
-ember-string-ishtmlsafe-polyfill@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/ember-string-ishtmlsafe-polyfill/-/ember-string-ishtmlsafe-polyfill-2.0.0.tgz#38f17038c3451999e9f1db748e424d8831e85863"
-  dependencies:
-    ember-cli-version-checker "^1.2.0"
-
 ember-svg-jar@^0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/ember-svg-jar/-/ember-svg-jar-0.12.0.tgz#558253e7b6f2617e1d04aa13fb2bb6c6c1924020"
@@ -3610,7 +3585,7 @@ ember-truth-helpers@^2.0.0:
   dependencies:
     ember-cli-babel "^6.8.2"
 
-ember-validators@^1.0.0, ember-validators@^1.0.4:
+ember-validators@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ember-validators/-/ember-validators-1.1.1.tgz#34b06f7c4bde4e57c30cb9dfc6566647c1c140c1"
   dependencies:
