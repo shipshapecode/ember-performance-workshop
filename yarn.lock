@@ -2976,6 +2976,12 @@ ember-cli-lodash-subset@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/ember-cli-lodash-subset/-/ember-cli-lodash-subset-2.0.1.tgz#20cb68a790fe0fde2488ddfd8efbb7df6fe766f2"
 
+ember-cli-netlify@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-netlify/-/ember-cli-netlify-0.0.0.tgz#6c8942c7f56325a37677035863c9f48b50889841"
+  dependencies:
+    fs-extra "^5.0.0"
+
 ember-cli-node-assets@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/ember-cli-node-assets/-/ember-cli-node-assets-0.2.2.tgz#d2d55626e7cc6619f882d7fe55751f9266022708"
@@ -4357,6 +4363,14 @@ fs-extra@^3.0.1:
 fs-extra@^4.0.0, fs-extra@^4.0.1:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-4.0.3.tgz#0d852122e5bc5beb453fb028e9c0c9bf36340c94"
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^4.0.0"
+    universalify "^0.1.0"
+
+fs-extra@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-5.0.0.tgz#414d0110cdd06705734d055652c5411260c31abd"
   dependencies:
     graceful-fs "^4.1.2"
     jsonfile "^4.0.0"
