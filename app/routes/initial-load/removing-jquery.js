@@ -23,12 +23,14 @@ export default Route.extend({
   activate() {
     this._super(...arguments);
 
+    // TODO: wrap this to ensure fastboot compatibility
     $(window).on('scroll', this._scrollHandler);
   },
 
   deactivate() {
     this._super(...arguments);
 
+    // TODO: wrap this to ensure fastboot compatibility
     $(window).off('scroll', this._scrollHandler);
   },
 
