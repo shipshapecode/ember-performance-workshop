@@ -1,28 +1,28 @@
+import Changeset from 'ember-changeset';
 import Controller from '@ember/controller';
 import EmberObject from '@ember/object';
 import { alias } from '@ember/object/computed';
-import { getOwner } from '@ember/application';
-import { validator, buildValidations } from 'ember-cp-validations';
+import lookupValidator from 'ember-changeset-validations';
+import {
+  validatePresence
+} from 'ember-changeset-validations/validators';
 
-const Validations = buildValidations({
-  testField: [
-    validator('presence', true)
-  ]
-});
+const Validations = {
+  testField: validatePresence(true)
+};
 
 export default Controller.extend({
   testObject: null,
 
-  error: alias('testObject.validations.errors.firstObject.message'),
+  error: alias('testObject.errors.firstObject.validation'),
 
   init() {
     this._super(...arguments);
 
-    this.set('testObject', EmberObject.extend(Validations).create(
-      getOwner(this).ownerInjection(),
-      {
-        testField: null
-      }
-    ));
+    const testObject = EmberObject.extend({
+      testField: null
+    }).create();
+
+    this.set('testObject', new Changeset(testObject, lookupValidator(Validations), Validations));
   }
 });
