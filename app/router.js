@@ -2,29 +2,34 @@ import EmberRouter from '@ember/routing/router';
 import config from './config/environment';
 import { getWithDefault } from '@ember/object';
 import { scheduleOnce } from '@ember/runloop';
+import { inject as service } from '@ember/service';
 
 const Router = EmberRouter.extend({
+  fastboot: service(),
+
   location: config.locationType,
   rootURL: config.rootURL,
 
   didTransition() {
     this._super(...arguments);
     this._trackPage();
-    // TODO: wrap this to ensure fastboot compatibility
-    window.scrollTo(0, 0);
+    if (!this.get('fastboot.isFastBoot')) {
+      window.scrollTo(0, 0);
+    }
   },
 
   _trackPage() {
-    // TODO: wrap this to ensure fastboot compatibility
-    scheduleOnce('afterRender', this, () => {
-      const page = document.location.pathname;
-      const title = getWithDefault(this, 'currentRouteName', 'unknown');
+    if (!this.get('fastboot.isFastBoot')) {
+      scheduleOnce('afterRender', this, () => {
+        const page = document.location.pathname;
+        const title = getWithDefault(this, 'currentRouteName', 'unknown');
 
-      if (typeof galite === 'undefined') {
-        return;
-      }
-      return galite('send', 'pageview', { page, title });
-    });
+        if (typeof galite === 'undefined') {
+          return;
+        }
+        return galite('send', 'pageview', { page, title });
+      });
+    }
   }
 });
 
