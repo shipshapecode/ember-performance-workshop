@@ -63,7 +63,7 @@
   export default Controller.extend({
     testObject: null,
 
-    errors: alias('testObject.errors'),
+    error: alias('testObject.errors.firstObject.validation'),
 
     init() {
       this._super(...arguments);
