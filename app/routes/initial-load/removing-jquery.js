@@ -3,6 +3,7 @@ import { inject as service } from '@ember/service';
 
 export default Route.extend({
   navLinks: service(),
+  fastboot: service(),
 
   afterModel() {
     this._super(...arguments);
@@ -22,15 +23,17 @@ export default Route.extend({
   activate() {
     this._super(...arguments);
 
-    // TODO: wrap this to ensure fastboot compatibility
-    window.addEventListener('scroll', this._scrollHandler);
+    if (!this.get('fastboot.isFastBoot')) {
+      window.addEventListener('scroll', this._scrollHandler);
+    }
   },
 
   deactivate() {
     this._super(...arguments);
 
-    // TODO: wrap this to ensure fastboot compatibility
-    window.removeEventListener('scroll', this._scrollHandler);
+    if (!this.get('fastboot.isFastBoot')) {
+      window.removeEventListener('scroll', this._scrollHandler);
+    }
   },
 
   _scrollHandler() {
