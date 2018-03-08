@@ -1,1 +1,16 @@
 <h2>Vertical Collection</h2>
+
+<h2>Exercise</h2>
+<p>
+  This table just renders 20,000 rows of content all at once. We can replace it with vertical-collection and
+  improve the rendering performance.
+</p>
+
+<table>
+  {{#each rows as |row index|}}
+    <tr>
+      <td>{{index}}</td>
+      <td>{{row.name}}</td>
+    </tr>
+  {{/each}}
+</table>
