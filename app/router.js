@@ -5,25 +5,31 @@ import { inject as service } from '@ember/service';
 import { scheduleOnce } from '@ember/runloop';
 
 const Router = EmberRouter.extend({
+  fastboot: service(),
+
   location: config.locationType,
   rootURL: config.rootURL,
-
-  metrics: service(),
 
   didTransition() {
     this._super(...arguments);
     this._trackPage();
-    // TODO: wrap this to ensure fastboot compatibility
-    window.scrollTo(0, 0);
+    if (!this.get('fastboot.isFastBoot')) {
+      window.scrollTo(0, 0);
+    }
   },
 
   _trackPage() {
-    scheduleOnce('afterRender', this, () => {
-      const page = this.get('url');
-      const title = this.getWithDefault('currentRouteName', 'unknown');
+    if (!get(this, 'fastboot.isFastBoot')) {
+      scheduleOnce('afterRender', this, () => {
+        const page = document.location.pathname;
+        const title = this.getWithDefault('currentRouteName', 'unknown');
 
-      get(this, 'metrics').trackPage({ page, title });
-    });
+        if (typeof galite === 'undefined') {
+          return;
+        }
+        return galite('send', 'pageview', { page, title });
+      });
+    }
   }
 });
 

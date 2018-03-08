@@ -1,8 +1,8 @@
-import $ from 'jquery';
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 
 export default Route.extend({
+  fastboot: service(),
   navLinks: service(),
 
   afterModel() {
@@ -23,15 +23,17 @@ export default Route.extend({
   activate() {
     this._super(...arguments);
 
-    // TODO: wrap this to ensure fastboot compatibility
-    $(window).on('scroll', this._scrollHandler);
+    if (!this.get('fastboot.isFastBoot')) {
+      window.addEventListener('scroll', this._scrollHandler);
+    }
   },
 
   deactivate() {
     this._super(...arguments);
 
-    // TODO: wrap this to ensure fastboot compatibility
-    $(window).off('scroll', this._scrollHandler);
+    if (!this.get('fastboot.isFastBoot')) {
+      window.removeEventListener('scroll', this._scrollHandler);
+    }
   },
 
   _scrollHandler() {

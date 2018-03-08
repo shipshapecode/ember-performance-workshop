@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    {{content-for 'google-analytics'}}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>EmberPerformanceBeforeApp</title>
@@ -8,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{content-for "head"}}
+
+    {{content-for 'header'}}
 
     <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
     <link integrity="" rel="stylesheet" href="{{rootURL}}assets/ember-performance-workshop.css">
@@ -17,8 +20,7 @@
   <body>
     {{content-for "body"}}
 
-    <script src="{{rootURL}}assets/vendor.js"></script>
-    <script src="{{rootURL}}assets/ember-performance-workshop.js"></script>
+    {{content-for 'concat-js'}}
 
     {{content-for "body-footer"}}
   </body>
