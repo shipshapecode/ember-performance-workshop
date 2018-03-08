@@ -13,7 +13,7 @@ const Validations = buildValidations({
 export default Controller.extend({
   testObject: null,
 
-  errors: alias('testObject.validations.errors'),
+  error: alias('testObject.validations.errors.firstObject.message'),
 
   init() {
     this._super(...arguments);

@@ -30,7 +30,7 @@
 
 <h3>Input</h3>
 {{input placeholder="Cannot be blank" value=testObject.testField}}
-{{errors.firstObject.message}}
+{{error}}
 
 <p>
   First we should install the new packages, which should already be installed for you, but just in case.
@@ -44,3 +44,35 @@
 <p>
   Then we need to change how we are setting up the validations in the controller.
 </p>
+
+{{#code-block language="javascript"}}
+  //controllers/broccoli-concat-analyser.js
+  import Changeset from 'ember-changeset';
+  import Controller from '@ember/controller';
+  import EmberObject from '@ember/object';
+  import { alias } from '@ember/object/computed';
+  import lookupValidator from 'ember-changeset-validations';
+  import {
+    validatePresence
+  } from 'ember-changeset-validations/validators';
+
+  const Validations = {
+    testField: validatePresence(true)
+  };
+
+  export default Controller.extend({
+    testObject: null,
+
+    errors: alias('testObject.errors'),
+
+    init() {
+      this._super(...arguments);
+
+      const testObject = EmberObject.extend({
+        testField: null
+      }).create();
+
+      this.set('testObject', new Changeset(testObject, lookupValidator(Validations), Validations));
+    }
+  });
+{{/code-block}}
