@@ -22,3 +22,18 @@
   ember install ember-service-worker-index
   ember install ember-service-worker-asset-cache
 {{/code-block}}
+
+<p>
+  Installing the addons is really all we need here, but some config can be helpful to us. ESW allows the SW
+  registration code to be inline, to avoid another file request, and it also provides a version strategy,
+  which will let us tell ESW to bust the cache every time we run a new build, so we do not end up with stale
+  SW code.
+</p>
+
+{{#code-block language="javascript"}}
+  // ember-cli-build.js
+  'ember-service-worker': {
+  registrationStrategy: 'inline',
+  versionStrategy: 'every-build'
+  },
+{{/code-block}}

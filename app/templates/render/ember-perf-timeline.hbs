@@ -1,3 +1,37 @@
 <h2>ember-perf-timeline</h2>
 
+<p>
+  <code><a href="https://github.com/ember-best-practices/ember-perf-timeline">ember-perf-timeline</a></code>
+</p>
+
+<h2>Exercise</h2>
+
+{{#code-block}}
+  ember install ember-perf-timeline
+{{/code-block}}
+
+<p>
+  We are rendering a component that is super slow and causes performance issues. We should investigate this.
+  Make sure your app is running then navigate to:
+  <code>
+    <a href="http://localhost:4200/render/ember-perf-timeline?_ember-perf-timeline=true">
+      http://localhost:4200/render/ember-perf-timeline?_ember-perf-timeline=true
+    </a>
+  </code>
+</p>
+
+<p>
+  Now open your Chrome DevTools and go to the Performance Tab. Let's reload the page and record our
+  performance. Once we have the results, we can look at the <code>User Timing</code> section and you should
+  notice there is a really long section with a title like <code>render.ember-perf-timeline:main (Rendering: outlet)</code>.
+  This is our slow component holding up the outlet from rendering. We can scroll down to the main section and look
+  at the call stack, and you will see the <code>init</code> call is holding us up for several seconds.
+</p>
+
+<p>
+  If we go inspect our slow component, you can see that it does some crazy stuff and changes the height 10,000
+  times. This is probably not a very real world example, but you can see this allows you to easily pinpoint where
+  things are going wrong.
+</p>
+
 {{slow-component}}
