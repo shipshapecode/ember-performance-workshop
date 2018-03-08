@@ -37,7 +37,7 @@ module.exports = function(defaults) {
       header: 'inline/header.css'
     },
     treeShaking: {
-      enabled: false,
+      enabled: true,
       include: [
         'modules/@html-next/vertical-collection/-debug/edge-visualization/debug-mixin.js',
         'modules/@html-next/vertical-collection/-debug/edge-visualization/visualization.js',
