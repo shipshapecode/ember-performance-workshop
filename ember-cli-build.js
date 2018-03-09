@@ -27,7 +27,8 @@ module.exports = function(defaults) {
       'plugins': ['normalize-whitespace', 'show-language']
     },
     'ember-service-worker': {
-      enabled: false
+      registrationStrategy: 'inline',
+      versionStrategy: 'every-build'
     },
     inlineContent: {
       'google-analytics': {
