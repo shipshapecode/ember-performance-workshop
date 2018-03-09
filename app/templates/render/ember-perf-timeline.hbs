@@ -41,15 +41,7 @@
 </p>
 
 {{#code-block language="javascript"}}
-  // Before - components/slow-component/component.js
-  for (let i = 0; i < 10000; i++) {
-    let currentHeight = newDiv.clientHeight;
-    newDiv.style.height = `${currentHeight + 1}px`;
-  }
-{{/code-block}}
-
-{{#code-block language="javascript"}}
-  // After - components/slow-component/component.js
+  // components/slow-component/component.js
   newDiv.style.height = '10000px';
 {{/code-block}}
 
