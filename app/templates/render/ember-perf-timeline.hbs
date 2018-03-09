@@ -34,4 +34,23 @@
   things are going wrong.
 </p>
 
+<p>
+  The expensive part here is the actual measuring of the height. We can see by looking at the code it keeps
+  measuring <code>newDiv.clientHeight</code> and adding one to it. Each time we measure it causes a force layout, so
+  if we just add 10,000 to the height at once instead and do not measure it will resolve this.
+</p>
+
+{{#code-block language="javascript"}}
+  // Before - components/slow-component/component.js
+  for (let i = 0; i < 10000; i++) {
+    let currentHeight = newDiv.clientHeight;
+    newDiv.style.height = `${currentHeight + 1}px`;
+  }
+{{/code-block}}
+
+{{#code-block language="javascript"}}
+  // After - components/slow-component/component.js
+  newDiv.style.height = '10000px';
+{{/code-block}}
+
 {{slow-component}}

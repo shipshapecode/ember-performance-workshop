@@ -38,6 +38,14 @@ module.exports = function(defaults) {
     treeShaking: {
       enabled: false,
       include: [
+        'modules/@html-next/vertical-collection/-debug/edge-visualization/debug-mixin.js',
+        'modules/@html-next/vertical-collection/-debug/edge-visualization/visualization.js',
+        'modules/@html-next/vertical-collection/-debug/utils/validate-css.js',
+        'modules/@html-next/vertical-collection/-debug/utils/validate-rect.js',
+        'modules/@html-next/vertical-collection/-debug/utils/validate-style.js',
+        'modules/@html-next/vertical-collection/-private.js',
+        'modules/@html-next/vertical-collection/components/vertical-collection/component.js',
+        'modules/@html-next/vertical-collection/-debug/index.js',
         'ember-validators/format.js',
         'ember-validators/presence.js'
       ]

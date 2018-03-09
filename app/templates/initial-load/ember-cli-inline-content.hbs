@@ -104,10 +104,10 @@ Then all we need to do is reference it in index.html.
 
 {{#code-block language="javascript"}}
   _trackPage() {
-    if (!get(this, 'fastboot.isFastBoot')) {
-      run.scheduleOnce('afterRender', this, () => {
+    if (!this.get('fastboot.isFastBoot')) {
+      scheduleOnce('afterRender', this, () => {
         const page = document.location.pathname;
-        const title = getWithDefault(this, 'currentRouteName', 'unknown');
+        const title = this.getWithDefault('currentRouteName', 'unknown');
 
         if (typeof galite === 'undefined') {
           return;
