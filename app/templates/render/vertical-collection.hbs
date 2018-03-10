@@ -19,3 +19,21 @@
     </tbody>
   </table>
 </div>
+
+<p>
+  We can simply switch out the <code>tbody</code> and <code>each</code> block with <code>vertical-collection</code>.
+</p>
+
+{{#code-block language="handlebars"}}
+  \{{#vertical-collection
+    rows
+    bufferSize=5
+    containerSelector=".table-wrapper"
+    estimateHeight=36
+    tagName="tbody" as |row index|}}
+    &lt;tr&gt;
+      &lt;td&gt;\{{index}}&lt;/td&gt;
+      &lt;td&gt;\{{row.name}}&lt;/td&gt;
+    &lt;/tr&gt;
+  \{{/vertical-collection}}
+{{/code-block}}

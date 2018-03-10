@@ -6,7 +6,7 @@ export default Controller.extend({
 
     this.rows = [];
 
-    for (let i = 0; i < 20000; i++) {
+    for (let i = 0; i < 10000; i++) {
       this.rows.push({ name: `foo${i}` });
     }
   }
