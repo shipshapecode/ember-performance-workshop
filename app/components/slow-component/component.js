@@ -12,10 +12,7 @@ export default Component.extend({
 
       document.body.appendChild(newDiv);
 
-      for (let i = 0; i < 10000; i++) {
-        let currentHeight = newDiv.clientHeight;
-        newDiv.style.height = `${currentHeight + 1}px`;
-      }
+      newDiv.style.height = '10000px';
 
       document.body.removeChild(newDiv);
     }
