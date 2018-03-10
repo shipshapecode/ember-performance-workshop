@@ -6,11 +6,16 @@
   improve the rendering performance.
 </p>
 
-<table>
-  {{#each rows as |row index|}}
-    <tr>
-      <td>{{index}}</td>
-      <td>{{row.name}}</td>
-    </tr>
-  {{/each}}
-</table>
+<div class="table-wrapper">
+  <table class="table table-striped">
+    <tbody>
+    {{#each
+      rows as |row index|}}
+      <tr>
+        <td>{{index}}</td>
+        <td>{{row.name}}</td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</div>

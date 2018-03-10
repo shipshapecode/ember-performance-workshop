@@ -1,2 +1,7 @@
 @import "ember-bootstrap/bootstrap";
 @import "pod-styles";
+
+.table-wrapper {
+  height: 500px;
+  overflow: scroll;
+}
