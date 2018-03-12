@@ -5,7 +5,7 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     brotli: {
-      enabled: false,
+      extensions: ['js', 'css', 'svg'],
       appendSuffix: false
     },
     'ember-bootstrap': {
@@ -36,6 +36,24 @@ module.exports = function(defaults) {
         enabled: process.env.EMBER_ENV === 'production'
       },
       header: 'inline/header.css'
+    },
+    prember: {
+      urls: [
+        '/extras/ember-macro-benchmark',
+        '/extras/prember',
+        '/initial-load/brotli',
+        '/initial-load/ember-cli-concat',
+        '/initial-load/ember-cli-concat',
+        '/initial-load/fastboot',
+        '/initial-load/removing-jquery',
+        '/initial-load/broccoli-concat-analyser',
+        '/initial-load/tree-shaking',
+        '/initial-load/ember-cli-inline-content',
+        '/reload/service-workers',
+        '/render/vertical-collection',
+        '/render/ember-perf-timeline',
+        '/setup'
+      ]
     },
     treeShaking: {
       enabled: true,
