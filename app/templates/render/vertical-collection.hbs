@@ -8,15 +8,17 @@
 
 <div class="table-wrapper">
   <table class="table table-striped">
-    <tbody>
-    {{#each
-      rows as |row index|}}
+    {{#vertical-collection
+      rows
+      bufferSize=5
+      containerSelector=".table-wrapper"
+      estimateHeight=36
+      tagName="tbody" as |row index|}}
       <tr>
         <td>{{index}}</td>
         <td>{{row.name}}</td>
       </tr>
-    {{/each}}
-    </tbody>
+    {{/vertical-collection}}
   </table>
 </div>
 
