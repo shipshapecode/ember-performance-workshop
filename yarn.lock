@@ -136,14 +136,14 @@
     ember-cli-preprocess-registry "^3.0.0"
     rsvp "^4.0.0"
 
-"@html-next/vertical-collection@^1.0.0-beta.10":
+"@html-next/vertical-collection@html-next/vertical-collection#ecd5173382cd5953ce9f74b8161b4d20672e1b11":
   version "1.0.0-beta.10"
-  resolved "https://registry.yarnpkg.com/@html-next/vertical-collection/-/vertical-collection-1.0.0-beta.10.tgz#2090dc4bbc423fa30e8a152a1a8364ff5b6fc398"
+  resolved "https://codeload.github.com/html-next/vertical-collection/tar.gz/ecd5173382cd5953ce9f74b8161b4d20672e1b11"
   dependencies:
     babel-plugin-transform-es2015-block-scoping "^6.24.1"
     babel6-plugin-strip-class-callcheck "^6.0.0"
     broccoli-funnel "^2.0.1"
-    broccoli-merge-trees "^2.0.0"
+    broccoli-merge-trees "^3.0.0"
     broccoli-rollup "^2.0.0"
     ember-cli-babel "^6.6.0"
     ember-cli-htmlbars "^2.0.3"
