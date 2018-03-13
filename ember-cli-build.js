@@ -38,6 +38,7 @@ module.exports = function(defaults) {
       header: 'inline/header.css'
     },
     prember: {
+      baseRoot: 'https://ember-performance-workshop.netlify.com',
       urls: [
         '/extras/ember-macro-benchmark',
         '/extras/prember',
